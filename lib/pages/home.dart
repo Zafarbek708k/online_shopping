@@ -123,6 +123,6 @@ class _HomeState extends State<Home> {
                   );
                 }),
           )
-        : const Center(child: Text("data"));
+        : const Center(child: CircularProgressIndicator());
   }
 }

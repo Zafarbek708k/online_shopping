@@ -100,6 +100,6 @@ class _BasketState extends State<Basket> {
             );
           }),
     )
-        : const Center(child: Text("data"));
+        : const Center(child: CircularProgressIndicator());
   }
 }
