@@ -18,14 +18,17 @@ class _HomeState extends State<Home> {
 
   Future<String?> readProducts() async {
     isLoading = false;
-    String? result =
-        await HttpClientService.getData(api: HttpClientService.baseApiGet);
+    log("readProduct");
+    String? result = await HttpClientService.getData(api: HttpClientService.baseApiGet);
+    log("result");
     log(result.toString());
     if (result != null) {
       setState(() {
         isLoading = true;
+        log(isLoading.toString());
       });
-      products = productsFromJson(result);
+      products = productsFromJson(result); /// productfromjson Stringni ochib list qiberadi
+
       log(products[1].title.toString());
     } else {
       log("don't come to data");
@@ -91,20 +94,6 @@ class _HomeState extends State<Home> {
                     child: Card(
                       child: ListTile(
                         onLongPress: (){
-                          Products addProduct = Products(
-                              title: product.title,
-                              category: product.category,
-                              description: product.description,
-                              price: product.price,
-                              discountPercentage: product.discountPercentage,
-                              id: product.id,
-                              images: product.images,
-                              rating: product.rating,
-                              stock: product.stock,
-                              thumbnail: product.thumbnail,
-                              brand: product.brand
-                          );
-
                           Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailProduct(products: product,)));
                         },
                         leading: Image.network(

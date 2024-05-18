@@ -6,9 +6,10 @@ import 'package:flutter/material.dart';
 @immutable
 final class HttpClientService {
 
-  static const String _baseUrl = "https://65ca48bb3b05d29307e0172d.mockapi.io";
-  static const String baseApiGet = "/product/product";
-  static const String baseApiBasket = "/product/basket";
+
+  static const String _baseUrl = "https://663c711317145c4d8c363c76.mockapi.io";
+  static const String baseApiGet = "/products/products";
+  static const String baseApiBasket = "/products/basket";
 
   const HttpClientService._internal(); // pravice constructor
 
